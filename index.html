@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Симплекс-метод (МЖВ) — Калькулятор</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <header>
+                <h1>Практична робота</h1>
+                <p class="subtitle">Розв'язання задач лінійного програмування зі змішаними змінними</p>
+            </header>
+
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="objective">Функція Z:</label>
+                    <input id="objective" placeholder="Наприклад: 3x1 + x2 + x3 - x4" value="3x1 + x2 + x3 - x4">
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="type">Тип задачі:</label>
+                        <select id="type">
+                            <option value="max">Max (Максимізація)</option>
+                            <option value="min">Min (Мінімізація)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="varsCount">Кількість змінних:</label>
+                        <input id="varsCount" type="number" value="4">
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="constraints">Система обмежень:</label>
+                    <textarea id="constraints" rows="6"
+                        placeholder="x1+x2-x3-2x4 <= 6&#10;x1+x2+x3-x4 >= 5&#10;2x1-x2+3x3+4x4 <= 10">
+-x1+x2+x3+x4 = 2
+x1-x2+x3+x4 <= 2
+x1+x2-x3+x4 <= 2 
+x1+x2+x3-x4 <= 2</textarea>
+                </div>
+
+                <button class="solve-btn" onclick="solve()">
+                    <span>Розрахувати результат</span>
+                </button>
+            </div>
+
+            <div class="output-section">
+                <h3>Протокол обчислення:</h3>
+                <div class="terminal-header">
+                </div>
+                <pre id="output">Тут з'явиться результат після натискання кнопки...</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
